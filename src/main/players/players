@@ -1,0 +1,7 @@
+public class Players{
+    public Player() {
+        int[] cards = new int[8];
+    }
+
+
+}

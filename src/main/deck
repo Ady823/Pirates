@@ -1,0 +1,16 @@
+public class Deck{
+    public Deck(){
+
+        int[] deckArray = new int[55];
+        int deckVal = 1; 
+
+        for(int i = 0; i < deckArray.length;){
+            for(int j = deckVal; j > 0; j--){
+                deckArray[i] = deckVal;
+                i++
+            }  
+            deckVal++;
+        }
+
+    }
+}
