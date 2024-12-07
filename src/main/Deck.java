@@ -1,5 +1,6 @@
 public class Deck{ 
     int[] deckArray = new int[55];
+    int productFactor = 56;
 
     public Deck(){
 
@@ -17,16 +18,26 @@ public class Deck{
     public int[] getArray(){
         return deckArray;
     }
-    public int[] shuffleDeck(){
+
+    /*pick a random value from deckArray, put it first in the shuffled Deck. Then remove that value from the first array 
+    using two loops
+    */
+    public int[] shuffledDeck(){
         int[] shuffledDeck = new int[55];
 
-        for (int i = 0; i < deckArray.length; i++) {
+        for (int i = 0; i < deckArray.length - 1; i++) {
 
-            if(deckArray[i] != -1) {
-                shuffledDeck[(int)(Math.random() * 56)];
-                deckArray[i] = -1;
+            int randomCard = deckArray[(int)(Math.random() * productFactor)];
+            shuffledDeck[i] = deckArray[randomCard];
+            productFactor--;
+
+            for(int j = 0; j < i; j++){
+                deckArray[j] = deckArray[j]; 
             }
-            
+            for(int j = i + 1; j < deckArray.length - 1; j++){
+                deckArray[j] = deckArray[j + 1];
+            }
         }
+        return shuffledDeck;
     }
 }
