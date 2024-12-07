@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Deck{ 
     int[] deckArray = new int[55];
     int productFactor = 56;
@@ -19,25 +20,29 @@ public class Deck{
         return deckArray;
     }
 
-    /*pick a random value from deckArray, put it first in the shuffled Deck. Then remove that value from the first array 
+    /*picks a random value from deckArray, puts it first in the shuffled Deck. Then removes that value from the first array 
     using two loops
     */
     public int[] shuffledDeck(){
         int[] shuffledDeck = new int[55];
 
         for (int i = 0; i < deckArray.length - 1; i++) {
+            
+            int[] newArray = new int[productFactor - 1];
 
-            int randomCard = deckArray[(int)(Math.random() * productFactor)];
-            shuffledDeck[i] = deckArray[randomCard];
+            System.out.println(Arrays.toString(newArray));
+            int randomCard = newArray[(int)(Math.random() * productFactor)];
+            shuffledDeck[i] = newArray[randomCard];
             productFactor--;
 
             for(int j = 0; j < i; j++){
-                deckArray[j] = deckArray[j]; 
+                newArray[j] = newArray[j]; 
             }
             for(int j = i + 1; j < deckArray.length - 1; j++){
-                deckArray[j] = deckArray[j + 1];
+                newArray[j] = newArray[j + 1];
             }
         }
         return shuffledDeck;
     }
 }
+
