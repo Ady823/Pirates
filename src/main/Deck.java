@@ -27,7 +27,6 @@ public class Deck{
         deckArray[randomIndex] = deckArray[i];
         deckArray[i] = temp;
         }
-        
         return deckArray;
     }
 }
