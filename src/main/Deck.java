@@ -24,8 +24,8 @@ public class Deck{
         for(int i = deckArray.length - 1; i > 0; i--){
         int randomIndex = (int)(Math.random() * deckArray.length);
         int temp = deckArray[randomIndex];
-        deckArray[randomIndex] = deckArray[i];
-        deckArray[i] = temp;
+        deckArray[randomIndex] = deckArray[i]; 
+        deckArray[i] = temp;   
         }
         return deckArray;
     }
