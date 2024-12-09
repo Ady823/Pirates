@@ -27,17 +27,17 @@ public class Player{
             takeCard();
         }
     }
-    private void takeCard(){
+    private void takeCard(){ 
         boolean search = true;
-        while(search){
+        while(search){ 
             for (int i = 0; i < cards.length; i++){
                 if (cards[i] == 0) {
                     cards[i] = topCard(); 
                     search = false;
                 }
-            }
-        }
-    }
+            } 
+        } 
+    } 
     private int topCard(int[] deck){
         int topCard = 0;
         while(topCard == 0) {
@@ -46,8 +46,7 @@ public class Player{
                     topCard = deck[i];
                 }
             }
-        }
+        } 
         return topCard;
-    }
-
-}
+    } 
+} 
