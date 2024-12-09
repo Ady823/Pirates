@@ -3,8 +3,8 @@ public class Player{
     private int cardCount;
     private int[] cards;
 
-    public  Player() {
-        cards = new int[8];
+    public Player() {
+        cards = new int[0];
         playerCount++;
         cardCount = 0;
     }
@@ -22,21 +22,18 @@ public class Player{
         return cards; 
     }
 
-    private void playerTurn(){
-        if (cardCount == 0) {
-            takeCard();
+    // private void playerTurn(){ 
+    //     if (cardCount == 0) {
+    //         takeCard();
+    //     } 
+    // }
+    public void takeCard(int card){ 
+        int[] tempCards = new int[cards.length + 1];
+        for(int i = 0; i < cards.length; i++) {
+            tempCards[i] = cards[i];
         }
-    }
-    private void takeCard(){ 
-        boolean search = true;
-        while(search){ 
-            for (int i = 0; i < cards.length; i++){
-                if (cards[i] == 0) {
-                    cards[i] = topCard(); 
-                    search = false;
-                }
-            } 
-        } 
+        tempCards[tempCards.length - 1] = card;
+        cards = tempCards;
     } 
     private int topCard(int[] deck){
         int topCard = 0;

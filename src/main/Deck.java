@@ -25,9 +25,19 @@ public class Deck{
         int randomIndex = (int)(Math.random() * deckArray.length);
         int temp = deckArray[randomIndex];
         deckArray[randomIndex] = deckArray[i]; 
-        deckArray[i] = temp;   
+        deckArray[i] = temp; 
         }
         return deckArray;
+    }
+    public int getNextCard(){
+        int lastCard = deckArray[deckArray.length - 1];
+        int[] tempArray = new int[deckArray.length - 1];
+        for (int i = 0; i < tempArray.length; i++){
+           tempArray[i] = deckArray[i];
+        }
+        deckArray = tempArray;
+        return lastCard;
+
     }
 }
 

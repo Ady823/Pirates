@@ -3,9 +3,8 @@ public class Game{
     int losingScore = 60 / numPlayers + 1;
 
     public Game(){
-    round1();
+        round1();
     }
-
     }
     private String round1(){ 
         for (int i = 0; i <= numPlayers; i++) {

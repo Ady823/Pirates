@@ -5,5 +5,7 @@ public class PiratePairs{
        Player player2 = new Player();
         Deck deck1 = new Deck(); 
         System.out.println(Arrays.toString(deck1.shuffledDeck())); 
+        int card = deck1.getNextCard();
+        player1.takeCard(card);
     }
 } 
