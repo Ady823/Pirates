@@ -8,7 +8,6 @@ public class Player{
         playerCount++;
         cardCount = 0;
     }
-
     public static int playerCount() {
         return playerCount;
     }

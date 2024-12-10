@@ -4,7 +4,6 @@ public class Deck{
     int productFactor = 56;
 
     public Deck(){
-
         int deckVal = 1; 
 
         for(int i = 0; i < deckArray.length;){
@@ -20,7 +19,6 @@ public class Deck{
     }
 
     public int[] shuffledDeck(){
-
         for(int i = deckArray.length - 1; i > 0; i--){
         int randomIndex = (int)(Math.random() * deckArray.length);
         int temp = deckArray[randomIndex];
@@ -37,7 +35,6 @@ public class Deck{
         }
         deckArray = tempArray;
         return lastCard;
-
     }
 }
 
