@@ -29,7 +29,7 @@ public class Player{
     public void takeCard(int card){ 
         int[] tempCards = new int[cards.length + 1];
         for(int i = 0; i < cards.length; i++) {
-            tempCards[i] = cards[i];
+            tempCards[i] = cards[i]; 
         }
         tempCards[tempCards.length - 1] = card;
         cards = tempCards;
