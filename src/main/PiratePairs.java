@@ -10,15 +10,16 @@ public class PiratePairs {
         Player player2 = new Player();
         Player[] players = { player1, player2 };
 
-        System.out.println(players);
+       // System.out.println(players);
 
         Deck deck1 = new Deck();
-        System.out.println(Arrays.toString(deck1.shuffledDeck()));
+        deck1.shuffledDeck();
 
-        while(gameEnd != false) {
-        int card = deck1.getNextCard();
-        
-            if (player1.has(card)){
+        while (gameEnd == false) {
+            int card = deck1.getNextCard();
+            if (player1.has(card)) {
+                player1.addPoints(card);
+                System.out.println("player 1 has " + player1.points());
                 gameEnd = true;
             } else {
                 player1.takeCard(card);
@@ -26,7 +27,7 @@ public class PiratePairs {
         }
 
         int card = deck1.getNextCard();
-       
+
         player1.takeCard(card);
         card = deck1.getNextCard();
         System.out.println(card);

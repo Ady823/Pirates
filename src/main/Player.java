@@ -2,11 +2,13 @@ public class Player{
     private static int playerCount = 0;
     private int cardCount;
     private int[] cards;
+    private int points;
 
     public Player() {
         cards = new int[0];
         playerCount++;
         cardCount = 0;
+        points = 0;
     }
     public static int playerCount() {
         return playerCount;
@@ -54,4 +56,11 @@ public class Player{
         } 
         return topCard;
     } 
+
+    public int points(){
+        return points;
+    }
+    public void addPoints(int card){
+        points += card;
+    }
 } 
