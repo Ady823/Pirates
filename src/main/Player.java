@@ -34,6 +34,15 @@ public class Player{
         tempCards[tempCards.length - 1] = card;
         cards = tempCards;
     } 
+    public boolean has(int card){
+        boolean has = false;
+        for (int i = 0; i < cards.length; i++){
+            if (card == cards[i]) {
+                has = true;
+            }   
+        }
+        return has;
+    }
     private int topCard(int[] deck){
         int topCard = 0;
         while(topCard == 0) {
