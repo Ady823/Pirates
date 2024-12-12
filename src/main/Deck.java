@@ -2,7 +2,20 @@ import java.util.Arrays;
 public class Deck{ 
     int[] deckArray = new int[55];
     int productFactor = 56;
+    int[] discardArray = new int[55];
 
+    public int[] discard() {
+        return discardArray;
+    }
+    public void addToDiscard(int[] deck) {
+        for (int i = 0; i < discardArray.length; i++) {
+            if (i != 0) {
+                discardArray[i] = deck[i];
+            }
+        }
+
+        discardArray = deck; 
+    }
     public Deck(){
         int deckVal = 1; 
 

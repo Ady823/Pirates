@@ -3,6 +3,7 @@ public class Player{
     private int cardCount;
     private int[] cards;
     private int points;
+    boolean gameEnd = false;
 
     public Player() {
         cards = new int[0];
@@ -63,7 +64,15 @@ public class Player{
     public void addPoints(int card){
         points += card;
     }
-    public void pair(Deck deck){
+
+    public boolean loss(Player p) {
+        boolean loss = false;
+        if(p.points() >= 60 / playerCount + 1) {
+            loss = true;
+        }
+        return loss;
+    }
+  /*   public void pair(Deck deck){
         while (gameEnd == false) {
             int card = deck.getNextCard();
             if (Player.has(card)) {
@@ -73,6 +82,6 @@ public class Player{
              } else {
                  player1.takeCard(card);
              }
-         }
-    }
+         } 
+    } */
 }

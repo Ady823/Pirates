@@ -10,13 +10,47 @@ public class PiratePairs {
         Player player2 = new Player();
         Player[] players = { player1, player2 };
 
-       // System.out.println(players);
+    
 
         Deck deck1 = new Deck();
         deck1.shuffledDeck();
 
-        player1.pair(deck1);
-       // player2.points();
+        while (gameEnd == false) {
+            int card = deck1.getNextCard();
+            if (player1.has(card)) {
+                player1.addPoints(card);
+                System.out.println("player 1 has " + player1.points());
+            } else {
+                player1.takeCard(card);
+            }
+        }
+        while (gameEnd == false) {
+            int card = deck1.getNextCard();
+            if (player2.has(card)) {
+                player1.addPoints(card);
+                System.out.println("player 2 has" + player2.points());
+            } else {
+                player2.takeCard(card);
+            }
+        }
+
+        while (gameEnd == false) {
+            if player1.points(60 / player1.playerCount() + 1) {
+                gameEnd = true;
+                System.out.println("Player2 wins");
+            }
+        }
+        while (gameEnd == false) {
+            if (player2.points(60 / player1.playerCount() + 1) {
+                gameEnd = true;
+                System.out.println("Player2 wins");
+        }
+
+        while(gameEnd == false) {
+            if (player1.loss() == true) {
+                deck1.addToDiscard(player1.showCards());
+            }
+        }
 
         int card = deck1.getNextCard();
 
@@ -29,12 +63,13 @@ public class PiratePairs {
         player1.takeCard(card);
         player2.takeCard(deck1.getNextCard());
 
+
         System.out.println(Arrays.toString(player1.showCards()));
         System.out.println(Arrays.toString(player2.showCards()));
 
         boolean loss = false;
     }
-    public void pair(){
+ /*    public void pair(){
         while (gameEnd == false) {
             int card = deck1.getNextCard();
             if (player1.has(card)) {
@@ -45,7 +80,7 @@ public class PiratePairs {
                 player1.takeCard(card);
             }
         }
-    }
+    } */
 }
 
 // public int checkPoints(Player player) {

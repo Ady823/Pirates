@@ -1,6 +1,9 @@
-public class Game{
+/*public class Game{
     int numPlayers = 2; //player1.playerCount();
+   public class InnerGame {
     int losingScore = 60 / numPlayers + 1;
+    
+   }
 
     public Game(){
         round1();
@@ -18,4 +21,4 @@ public class Game{
         }
     }
 
-}
+}*/
