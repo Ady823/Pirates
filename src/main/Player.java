@@ -63,4 +63,16 @@ public class Player{
     public void addPoints(int card){
         points += card;
     }
-} 
+    public void pair(Deck deck){
+        while (gameEnd == false) {
+            int card = deck.getNextCard();
+            if (Player.has(card)) {
+                Player.addPoints(card);
+                System.out.println("player 1 has " + Player.points());
+                gameEnd = true;
+             } else {
+                 player1.takeCard(card);
+             }
+         }
+    }
+}
